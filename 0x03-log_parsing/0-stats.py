@@ -41,4 +41,3 @@ try:
 
 finally:
     display_stats(file_size, status_code)
-
