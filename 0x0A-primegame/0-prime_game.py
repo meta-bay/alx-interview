@@ -18,13 +18,11 @@ def isWinner(x, nums):
     def play_round(n):
         turn = 0
         primes = prime_number(n)
-        remaining = set(range(1, n + 1))
 
         while primes:
             prime = primes[0]
             multiples = set(range(prime, n + 1, prime))
-            remaining -= multiples
-            primes = [p for p in primes if p in remaining]
+            primes = [p for p in primes if p not in multiples]
             turn = 1 - turn
         return 'Ben' if turn == 0 else 'Maria'
 
