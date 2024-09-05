@@ -6,7 +6,7 @@ def isWinner(x, nums):
     """ Prime game function """
     def prime_number(n):
         primes = []
-        is_prime = [True] * (n + 1)
+        is_prime = [True for i in range(n + 1)]
         is_prime[0] = is_prime[1] = False
 
         for p in range(2, n + 1):
