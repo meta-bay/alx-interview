@@ -37,11 +37,12 @@ def isWinner(x, nums):
     for n in nums:
         if n == 1:
             ben_wins += 1
-        winner = play_round(n)
-        if winner == 'Maria':
-            maria_wins += 1
         else:
-            ben_wins += 1
+            winner = play_round(n)
+            if winner == 'Maria':
+                maria_wins += 1
+            else:
+                ben_wins += 1
 
     if ben_wins > maria_wins:
         return 'Ben'
