@@ -13,15 +13,11 @@ def isWinner(x, nums):
         return [i for i in range(2, n + 1) if primes[i]]
 
     def play_round(n):
-        turn = 0
         primes = prime_number(n)
-
-        while primes:
-            prime = primes[0]
-            multiples = set(range(prime, n + 1, prime))
-            primes = [p for p in primes if p not in multiples]
-            turn = 1 - turn
-        return 'Ben' if turn == 0 else 'Maria'
+        if len(primes) % 2 == 0:
+            return 'Ben'
+        else:
+            return 'Maria'
 
     if x < 1 or not nums:
         return None
